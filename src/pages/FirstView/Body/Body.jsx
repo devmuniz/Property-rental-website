@@ -27,6 +27,8 @@
     };
 
     return (
+
+      <body id='bodyContent'>
       <section className="firstFormContainer">
         <section className="firstFormBox">
 
@@ -83,6 +85,8 @@
 
         </section>
       </section>
+
+      </body>
     )
   }
 
