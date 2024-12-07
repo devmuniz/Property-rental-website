@@ -1,0 +1,56 @@
+:root {
+    --text-color: #10002B;
+    --principal-color: #7B2CBF;
+}
+
+.header {
+    width: 85%;
+    height: 100%;
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+}
+
+.ImoRegister {
+    position: absolute;
+    display: flex;
+    right: 20%;
+    margin-top: 3%;
+    cursor: pointer;
+}
+
+.ImoRegister a {
+    text-decoration: none;
+    display: flex;
+}
+
+.ImoRegister a:hover {
+    transform: scale(1.06);
+    transition: 0.5s;
+}
+
+.plusIcon {
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+    margin-top: 3px;
+}
+
+.titlePlus {
+    font-size: 1.1em;
+    color: var(--principal-color);
+    font-weight: 700;
+}
+
+.SecondViewBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 85%; 	
+    height: 100%;
+}
+
+h2 {
+    display: flex;
+}
+

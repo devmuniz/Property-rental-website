@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import Header from "./Header/Header"
-import Body from "./pages/FirstView/Body/Body"
-import View2 from "./pages/SecondView/Body/Body"
+import Header from "./components/Header/Header"
+import FirstView from "./pages/FirstView/FirstView"
+import SecondView from "./pages/SecondView/SecondView"
 
 function App() {
   return (
@@ -11,8 +11,8 @@ function App() {
 
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Body />} />
-        <Route path="/View2" element={<View2 />} />
+        <Route path="/" element={<FirstView />} />
+        <Route path="/View2" element={<SecondView />} />
         <Route path="*" element={<h1>Página não encontrada!</h1>} />
       </Routes>
 

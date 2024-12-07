@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import './Body.css';
+import './FirstView.css';
 import { Link } from 'react-router-dom';
 
-function Body() {
+function FirstView() {
   const [charCount, setCharCount] = useState(0);
   const [estados, setEstados] = useState([]);
   const [cep, setCep] = useState('');
@@ -107,4 +107,4 @@ function Body() {
   );
 }
 
-export default Body;
+export default FirstView;
