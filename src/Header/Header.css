@@ -1,0 +1,39 @@
+:root {
+    --principal-color: #7B2CBF;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.logo {
+    width: 80px;
+    margin-left: 30px;
+}
+
+.titleHeader {
+    font-size: 1.2em;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0; 
+    color: var(--principal-color);
+}
+
+.userIcon {
+    width: 30px;
+    margin-right: 20px;
+    border-radius: 50px;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.userIcon:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+
