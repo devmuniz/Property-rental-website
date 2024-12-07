@@ -3,6 +3,12 @@
     --principal-color: #7B2CBF;
 }
 
+html {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    user-select: none;
+}
+
 .firstFormContainer {
     width: 100%;
     height: 100%;
@@ -87,6 +93,17 @@ textarea::placeholder {
     gap: 10px;
 }
 
+input[type="number"] {
+    -moz-appearance: textfield; /* Remove setas no Firefox */
+  }
+  
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none; /* Remove setas no Chrome, Safari, etc. */
+    margin: 0; /* Remove margens padrão */
+  }
+  
+
 .doubleInput {
     width: 188px;
     height: 40px;
@@ -160,5 +177,20 @@ textarea::placeholder {
     transform: scale(1.09) translateX(160%);
     transition: 0.5s;
 }
+
+.body-container {
+    display: flex;
+  }
+  
+  .firstFormContainer {
+    flex: 1;
+    margin-left: 60px; /* Ajuste conforme a largura inicial do sidebar */
+    transition: margin-left 0.3s;
+  }
+  
+  .sidebar.open + .firstFormContainer {
+    margin-left: 200px; /* Ajuste conforme a largura expandida do sidebar */
+  }
+  
 
   
