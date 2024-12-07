@@ -1,0 +1,67 @@
+:root {
+    --text-color: #10002B;
+    --principal-color: #7B2CBF;
+}
+
+.nameFlat {
+    position: absolute;
+    width: 100%;
+    left: 53%;
+    bottom: 57%;
+    display: flex;
+    flex-direction: column;
+}
+
+.nameFlat h2 {
+    color: var(--text-color);
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.descriptionFlat {
+    position: absolute;
+    width: 100%;
+    left: 53%;
+    bottom: 31%;
+    display: flex;
+    flex-direction: column;
+}
+
+.descriptionFlat p {
+    width: 500px;
+}
+
+
+.informationFlat{
+    position: absolute;
+    width: 100%;
+    left: 53%;
+    bottom: 15%;
+    display: flex;
+    flex-direction: column;
+}
+
+.classification {
+    display: flex;
+    flex-direction: row;
+}
+
+.classification h3 {
+    margin-left: 30px;
+    position: absolute;
+    margin-top: -30px;
+    color: var(--text-color);
+}
+
+.star {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin-top: -30px;
+}
+
+.daily {
+    margin-top: 0;
+    position: absolute;
+}
+

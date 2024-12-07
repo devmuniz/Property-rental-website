@@ -7,16 +7,19 @@
     width: 500px;
     border-radius: 30px;
     justify-self: center;
-    margin-left: 12%;
+    margin-left: 23%;
+
 }
 
 .containerSwiper {
     display: flex;
     justify-content: center;
+    
 }
 
 .custom-swiper {
-    margin-right: 50%;
+    width: 700px;
+    margin-left: 0; 
 }
 
 .custom-swiper .swiper-button-next,
@@ -30,17 +33,21 @@
 }
 
 .custom-swiper .swiper-button-prev {
-  left: 6%; 
+  left: 17%; 
 }
 
 .custom-swiper .swiper-button-next {
-  right: 8%; 
+  right: 0; 
 }
 
 .custom-swiper .swiper-pagination {
     position: absolute; 
     transform: translateY(-50%); 
     flex-direction: row; 
+  }
+
+  .swiper-pagination {
+    margin-left: 8%;
   }
   
   .custom-swiper .swiper-pagination-bullet {
