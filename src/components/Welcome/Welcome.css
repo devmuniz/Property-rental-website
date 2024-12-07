@@ -1,0 +1,40 @@
+:root {
+    --text-color: #10002B;
+    --principal-color: #7B2CBF;
+}
+
+.flatsOptions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 4%;
+    margin-left: 12%;
+    font-size: 1em;
+}
+
+.optionWelcome {
+    margin-top: 2%;
+    margin-right: 20%;
+}
+
+.allFlatsBtn, .unvailableBtn {
+    color: var(--text-color);
+    border-radius: 5px;
+    border: 1px solid rgb(161, 161, 161);
+    padding: 7px;
+    font-family: 'Jura', sans-serif;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.allFlatsBtn:hover, .unvailableBtn:hover {
+    transform: scale(1.02);
+    transition: 0.5s;
+}
+
+.activeBtn {
+    background-color: var(--principal-color);
+    color: white;
+    border: 1px solid var(--principal-color);
+}

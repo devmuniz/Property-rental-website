@@ -11,7 +11,7 @@
     justify-content: center;
 }
 
-.ImoRegister {
+.imoRegister {
     position: absolute;
     display: flex;
     right: 20%;
@@ -19,12 +19,12 @@
     cursor: pointer;
 }
 
-.ImoRegister a {
+.imoRegister a {
     text-decoration: none;
     display: flex;
 }
 
-.ImoRegister a:hover {
+.imoRegister a:hover {
     transform: scale(1.06);
     transition: 0.5s;
 }
@@ -42,7 +42,7 @@
     font-weight: 700;
 }
 
-.SecondViewBox {
+.registerBox {
     display: flex;
     flex-direction: column;
     justify-content: center;
