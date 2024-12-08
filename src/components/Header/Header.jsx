@@ -12,19 +12,19 @@ function Header() {
 
         <div>
           <a href="">
-            <img src="../src/assets/img/building.png" className="userIcon"/>
+            <img src="/assets/img/building.png" className="userIcon"/>
           </a>
           <a href="">
-            <img src="../src/assets/img/calendar.png" className="userIcon"/>
+            <img src="/assets/img/calendar.png" className="userIcon"/>
           </a>
           <a href="">
-            <img src="../src/assets/img/table.png" className="userIcon"/>
+            <img src="/assets/img/table.png" className="userIcon"/>
           </a>
           <a href="">
-            <img src="../src/assets/img/chat.png" className="userIcon"/>
+            <img src="/assets/img/chat.png" className="userIcon"/>
           </a>
           <a href="">
-            <img src="../src/assets/img/user.png" className="userIcon"/>
+            <img src="/assets/img/user.png" className="userIcon"/>
           </a>
         </div>
       </div>

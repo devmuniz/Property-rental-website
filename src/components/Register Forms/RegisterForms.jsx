@@ -28,7 +28,7 @@ function RegisterForms() {
   return (
     <section className="firstFormBox">
       <a href="/">
-        <img src="../src/assets/img/arrow.png" className="arrow" alt="Voltar" />
+        <img src="/assets/img/arrow.png" className="arrow" alt="Voltar" />
       </a>
 
       <h3 className="titleForm">Para começarmos, precisamos de alguns dados</h3>

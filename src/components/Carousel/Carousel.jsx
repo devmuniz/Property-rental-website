@@ -8,9 +8,9 @@ import "./Carousel.css";
 
 function ImageCarousel() {
   const images = [
-    "../src/assets/img/house1.jpeg",
-    "../src/assets/img/house2.jpg",
-    "../src/assets/img/house3.jpg",
+    "/assets/img/house1.jpeg",
+    "/assets/img/house2.jpg",
+    "/assets/img/house3.jpg",
   ];
 
   return (

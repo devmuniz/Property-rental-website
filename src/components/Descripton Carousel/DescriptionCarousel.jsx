@@ -19,7 +19,7 @@ function DescriptonCarousel() {
 
       <div className="informationFlat">
         <div className="classification">
-          <img src="../src/assets/img/star.png" alt="" className="star" />
+          <img src="/assets/img/star.png" alt="" className="star" />
           <h3>4,5</h3>
         </div>
 
