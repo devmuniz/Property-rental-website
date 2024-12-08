@@ -1,107 +1,99 @@
-import './RegisterForms.css'
+import './RegisterForms.css';
 import React, { useState, useEffect } from 'react';
 
-function RegisterForms () {
-    const [charCount, setCharCount] = useState(0);
-    const [estados, setEstados] = useState([]);
-    const [cep, setCep] = useState('');
-  
-    useEffect(() => {
-      fetch('https://brasilapi.com.br/api/ibge/uf/v1')
-        .then((response) => response.json())
-        .then((data) => setEstados(data))
-        .catch((error) => console.error('Erro ao buscar estados:', error));
-    }, []);
+function RegisterForms() {
+  const [charCount, setCharCount] = useState(0);
+  const [estados, setEstados] = useState([]);
+  const [cep, setCep] = useState('');
 
-    const handleTextareaChange = (event) => {
-        setCharCount(event.target.value.length);
-      };
-    
-      const handleCepChange = (event) => {
-        let value = event.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
-        if (value.length > 5) {
-          value = value.replace(/^(\d{5})(\d)/, '$1-$2'); // Adiciona o hífen no formato XXXXX-XXX
-        }
-        setCep(value);
-      };
-      
-    return(
+  useEffect(() => {
+    fetch('https://brasilapi.com.br/api/ibge/uf/v1')
+      .then((response) => response.json())
+      .then((data) => setEstados(data))
+      .catch((error) => console.error('Erro ao buscar estados:', error));
+  }, []);
 
-        
-        <section className="firstFormBox">
-          <a href="/">
-            <img src={'../src/assets/img/arrow.png'} className="arrow" />
-          </a>
+  const handleTextareaChange = (event) => {
+    setCharCount(event.target.value.length);
+  };
 
-          <h3 className="titleForm">
-            Para começarmos, precisamos de alguns dados
-          </h3>
+  const handleCepChange = (event) => {
+    let value = event.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+    if (value.length > 5) {
+      value = value.replace(/^(\d{5})(\d)/, '$1-$2'); // Adiciona o hífen
+    }
+    setCep(value);
+  };
 
-          <input
-            type="text"
-            id="nameProp"
-            className="inputSingle"
-            placeholder="Nome do imóvel"
-          />
-          <label htmlFor="nameProp" className="descInput">
-            O nome do imóvel será exibido na sua tela inicial e na reserva para
-            o hóspede
-          </label>
+  return (
+    <section className="firstFormBox">
+      <a href="/">
+        <img src="../src/assets/img/arrow.png" className="arrow" alt="Voltar" />
+      </a>
 
-          <div className="textarea-container">
-            <textarea
-              id="descricao"
-              maxLength="250"
-              placeholder="Descrição"
-              onChange={handleTextareaChange}
-            ></textarea>
-            <div className="char-counter">
-              <span>{charCount}</span>/250
-            </div>
-          </div>
+      <h3 className="titleForm">Para começarmos, precisamos de alguns dados</h3>
 
-          <input
-            type="text"
-            id="inputCEP"
-            value={cep}
-            className="inputSingle"
-            onChange={handleCepChange}
-            maxLength={9} // Limita o input a 9 caracteres (incluindo o hífen)
-            placeholder="CEP"
-          />
-          <input type="text" className="inputSingle" placeholder="Endereço" />
+      <input
+        type="text"
+        id="nameProp"
+        className="inputSingle"
+        placeholder="Nome do imóvel"
+      />
+      <label htmlFor="nameProp" className="descInput">
+        O nome do imóvel será exibido na sua tela inicial e na reserva para o
+        hóspede
+      </label>
 
-          <div id="numberComp">
-            <input
-              type="number"
-              className="doubleInput"
-              placeholder="Número"
-            />
-            <input
-              type="text"
-              className="doubleInput"
-              placeholder="Complemento"
-            />
-          </div>
+      <div className="textarea-container">
+        <textarea
+          id="descricao"
+          maxLength="250"
+          placeholder="Descrição"
+          onChange={handleTextareaChange}
+        ></textarea>
+        <div className="char-counter">
+          <span>{charCount}</span>/250
+        </div>
+      </div>
 
-          <div id="cityState">
-            <input type="text" className="cityInput" placeholder="Cidade" />
+      <input
+        type="text"
+        id="inputCEP"
+        value={cep}
+        className="inputSingle"
+        onChange={handleCepChange}
+        maxLength={9}
+        placeholder="CEP"
+      />
+      <input type="text" className="inputSingle" placeholder="Endereço" />
 
-            <select id="uf" className="stateInput">
-              <option value="" disabled selected>
-                UF
-              </option>
-              {estados.map((estado) => (
-                <option key={estado.sigla} value={estado.sigla}>
-                  {estado.sigla}
-                </option>
-              ))}
-            </select>
-          </div>
+      <div id="numberComp">
+        <input type="number" className="doubleInput" placeholder="Número" />
+        <input
+          type="text"
+          className="doubleInput"
+          placeholder="Complemento"
+        />
+      </div>
 
-          <button className="continueButton">Continuar</button>
-        </section>
-    )
+      <div id="cityState">
+        <input type="text" className="cityInput" placeholder="Cidade" />
+
+        <select id="uf" className="stateInput">
+          <option value="" disabled selected>
+            UF
+          </option>
+          {estados.map((estado) => (
+            <option key={estado.sigla} value={estado.sigla}>
+              {estado.sigla}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <button className="continueButton">Continuar</button>
+    </section>
+  );
 }
 
-export default RegisterForms
+export default RegisterForms;

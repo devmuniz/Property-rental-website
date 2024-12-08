@@ -21,7 +21,7 @@
     margin-right: 12%;
 }
 
-.allFlatsBtn, .unvailableBtn {
+.allFlatsBtn, .unavailableBtn {
     color: var(--text-color);
     border-radius: 5px;
     border: 1px solid rgb(161, 161, 161);
@@ -32,7 +32,7 @@
     transition: background-color 0.3s, color 0.3s;
 }
 
-.allFlatsBtn:hover, .unvailableBtn:hover {
+.allFlatsBtn:hover, .unavailableBtn:hover {
     transform: scale(1.02);
     transition: 0.5s;
 }

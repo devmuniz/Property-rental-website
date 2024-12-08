@@ -1,27 +1,23 @@
-import './RegisterSuperior.css'
-import { Link } from "react-router-dom"
+import './RegisterSuperior.css';
+import { Link } from "react-router-dom";
 
+function RegisterSuperior() {
+  return (
+    <section className="header">
+      <section className="registerBox">
+        <a href="/">
+          <img src="../src/assets/img/arrow.png" className="arrow" alt="Voltar" />
+        </a>
 
-function RegisterSuperior () {
-    return (
-        <section className='header'>
-                <section className='registerBox'>
-
-                    <a href="/">
-                    <img src={'../src/assets/img/arrow.png'} className="arrow" />
-                    </a>
-
-                    <div className='imoRegister'> 
-                    
-                        <a href=""><img src={'../src/assets/img/plus.png'} alt="" className='plusIcon' />
-                        <span className='titlePlus'><Link to={'/View2'}>Cadastrar imóvel</Link></span>
-                        </a>
-
-                    </div>
-
-                </section>
-            </section>
-    )
+        <div className="imoRegister">
+          <Link to="/View2" className="linkWrapper">
+            <img src="../src/assets/img/plus.png" alt="Cadastrar imóvel" className="plusIcon" />
+            <span className="titlePlus">Cadastrar imóvel</span>
+          </Link>
+        </div>
+      </section>
+    </section>
+  );
 }
 
-export default RegisterSuperior
+export default RegisterSuperior;

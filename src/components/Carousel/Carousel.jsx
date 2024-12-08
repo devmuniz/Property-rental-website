@@ -2,9 +2,9 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import "./Carousel.css";
-import "swiper/css/pagination"; // Importa o CSS da paginação
+import "swiper/css/pagination"; 
 import { Navigation, Pagination } from "swiper/modules";
+import "./Carousel.css";
 
 function ImageCarousel() {
   const images = [
@@ -15,9 +15,9 @@ function ImageCarousel() {
 
   return (
     <Swiper
-      navigation={true}
-      pagination={{ clickable: true }} // Habilita as bolinhas clicáveis
-      modules={[Navigation, Pagination]} // Adiciona o módulo de paginação
+      navigation={true} // Botoes de navegação
+      pagination={{ clickable: true }} // bolinhas clicáveis :)
+      modules={[Navigation, Pagination]}
       spaceBetween={30}
       slidesPerView={1}
       className="custom-swiper"
@@ -29,6 +29,6 @@ function ImageCarousel() {
       ))}
     </Swiper>
   );
-};
+}
 
 export default ImageCarousel;
