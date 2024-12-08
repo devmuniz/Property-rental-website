@@ -6,7 +6,7 @@ function Header() {
     <header>
       <div id="header">
         <a href="/">
-          <img src="./src/assets/img/logo.svg" className="logo" alt="Logo" />
+          <img src="/assets/img/logo.png" className="logo" alt="Logo" />
         </a>
         <h2 className="titleHeader">Anuncie seu espaço e fature!</h2>
 
