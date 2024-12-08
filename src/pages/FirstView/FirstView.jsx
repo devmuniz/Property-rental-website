@@ -1,16 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import './FirstView.css';
-import RegisterForms from '../../components/Register Forms/RegisterForms';
+import React, { useState, useEffect } from 'react'
+import './FirstView.css'
+import '../../../index.css'
+import RegisterSuperior from '../../components/RegisterSuperior/RegisterSuperior'
+import Welcome from '../../components/Welcome/Welcome'
+import ImageCarousel from '../../components/Carousel/Carousel'
+import DescriptonCarousel from '../../components/Descripton Carousel/DescriptionCarousel'
 
 function FirstView() {
-  
-  return (
-    <div id="bodyContent">
-      <section className="firstFormContainer">
-        <RegisterForms />
-      </section>
-    </div>
-  );
+    return (
+        <div>
+            <RegisterSuperior />
+            <Welcome />
+            <ImageCarousel />
+            <DescriptonCarousel />
+        </div> 
+
+    )
 }
 
-export default FirstView;
+export default FirstView
