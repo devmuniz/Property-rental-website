@@ -5,6 +5,7 @@ function RegisterForms() {
   const [charCount, setCharCount] = useState(0);
   const [estados, setEstados] = useState([]);
   const [cep, setCep] = useState('');
+  const [address, setAddress] = useState({ logradouro: '', cidade: '', uf: '' });
 
   useEffect(() => {
     fetch('https://brasilapi.com.br/api/ibge/uf/v1')
@@ -18,11 +19,32 @@ function RegisterForms() {
   };
 
   const handleCepChange = (event) => {
-    let value = event.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
-    if (value.length > 5) {
-      value = value.replace(/^(\d{5})(\d)/, '$1-$2'); // Adiciona o hífen
-    }
+    const value = event.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
     setCep(value);
+    if (value.length === 8) {
+      fetch(`https://brasilapi.com.br/api/cep/v2/${value}`)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error('CEP não encontrado');
+          }
+          return response.json();
+        })
+        .then((data) => {
+          setAddress({
+            logradouro: data.street || '',
+            cidade: data.city || '',
+            uf: data.state || '',
+          });
+        })
+        .catch((error) => {
+          console.error('Erro ao buscar o CEP:', error);
+          setAddress({ logradouro: '', cidade: '', uf: '' });
+        });
+    }
+  };
+
+  const handleAddressChange = (field, value) => {
+    setAddress((prevAddress) => ({ ...prevAddress, [field]: value }));
   };
 
   return (
@@ -62,33 +84,46 @@ function RegisterForms() {
         value={cep}
         className="inputSingle"
         onChange={handleCepChange}
-        maxLength={9}
+        maxLength={8}
         placeholder="CEP"
       />
-      <input type="text" className="inputSingle" placeholder="Endereço" />
+      <input
+        type="text"
+        className="inputSingle"
+        placeholder="Endereço"
+        value={address.logradouro}
+        onChange={(e) => handleAddressChange('logradouro', e.target.value)}
+      />
 
       <div id="numberComp">
         <input type="number" className="doubleInput" placeholder="Número" />
-        <input
-          type="text"
-          className="doubleInput"
-          placeholder="Complemento"
-        />
+        <input type="text" className="doubleInput" placeholder="Complemento" />
       </div>
 
       <div id="cityState">
-        <input type="text" className="cityInput" placeholder="Cidade" />
-
-        <select id="uf" className="stateInput">
-          <option value="" disabled selected>
+        <input
+          type="text"
+          className="cityInput"
+          placeholder="Cidade"
+          value={address.cidade}
+          onChange={(e) => handleAddressChange('cidade', e.target.value)}
+        />
+        <select
+          id="uf"
+          className={`stateInput ${address.uf ? 'selected' : ''}`}
+          value={address.uf}
+          onChange={(e) => handleAddressChange('uf', e.target.value)}
+        >
+          <option value="" disabled>
             UF
           </option>
           {estados.map((estado) => (
             <option key={estado.sigla} value={estado.sigla}>
               {estado.sigla}
             </option>
-          ))}
-        </select>
+        ))}
+      </select>
+
       </div>
 
       <button className="continueButton">Continuar</button>

@@ -110,16 +110,18 @@ input[type="number"] {
     height: 45px;
     align-self: center;
     border: 1px solid rgb(161, 161, 161);
-    color: rgb(105, 105, 105);;
+    color: rgb(105, 105, 105);
     border-radius: 3px;
     padding-left: 10px;
     margin-top: 1%;
 }
 
-.ufOption {
-    color: pink;
-}
-
 .body-container {
     display: flex;
   }
+
+  .stateInput.selected {
+    color: black; 
+    font-weight: 800;
+  }
+  
